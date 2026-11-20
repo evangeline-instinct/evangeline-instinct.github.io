@@ -120,10 +120,13 @@
 </main>
 <script src="pond.js"></script>
 <script>
+/* The lock is the same pattern as akshatb.com/private: the password is stretched into a key
+   (PBKDF2, 2,000,000 rounds) and the page's private config is encrypted with it (AES-GCM).
+   Nothing private can be read from this file without the password; a wrong password fails
+   decryption. Once unlocked, the key is kept in this tab only (sessionStorage). */
+var SALT = '9ZUEdBrs3ixk/c+WSM846w==', ITER = 2000000, KEY = 'domain.key';
+var CONTENT = 't8sTctIx4Lv/DCZT.Ik3Yi/G0VN0B2NmNH/O+c1BMYR82KaDUknw4kTsJ4oX8z1rlTaYNRuDWW0InizQ6yWh9QVWhPYNmkszs/2geJmoIrw0PiSstxe79wlQgTDxnQ7CdJYPgzAvYJw/7Ws8IxVXkZyOn55u1aeDjP/4yghBJo9PYjwdIF/X/pQRqsUsxxdegsdou48fzuKDmwa4Y7AwpOTDnu9IxKpaOM25I0jiKF1Dx2/PmDS5YIpM/yaSCRbG6DLqLa9rx8vVb6hRi2Om1bQzksDX510mifGDOw4Q4o82/dVXuVnV10TTSMTuQdTfP8ckXGXTaAAf8mM37bAXMuvjivvNJaLe2ON3EZDQNGTDJpcEyBrRsHk3Zf6ACAV5MIMdQrqvGPbl6RylGPVMptRDZ21GX7DpkLD4geW3NL5/E9CzxFVrn+J+pkXRak3yvSVdNFxwC';
 (function () {
-  var TODO_BASE = "https://akshatb-to-do.onrender.com/";
-  var READING_BASE = "https://reading-queue.onrender.com/";
-  var RESOURCES_URL = "https://evangeline-instinct.github.io/akshat-resources/";
   var main = document.getElementById("main");
   var gate = document.getElementById("gate");
   var home = document.getElementById("view-home");
@@ -131,12 +134,22 @@
   var form = document.getElementById("gate-form");
   var input = document.getElementById("gate-input");
   var msg = document.getElementById("gate-msg");
-  var gateHash = null;
+  var cfg = null;
 
-  function sha256hex(text) {
-    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)).then(function (buf) {
-      return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
-    });
+  function b64(u8) { var s = ''; for (var i = 0; i < u8.length; i++) s += String.fromCharCode(u8[i]); return btoa(s); }
+  function unb64(s) { var b = atob(s), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
+
+  function stretch(pw) {
+    return crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveBits'])
+      .then(function (base) {
+        return crypto.subtle.deriveBits({ name: 'PBKDF2', salt: unb64(SALT), iterations: ITER, hash: 'SHA-256' }, base, 256);
+      }).then(function (bits) { return new Uint8Array(bits); });
+  }
+  function decrypt(raw, blob) {
+    var p = String(blob).split('.');
+    return crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']).then(function (key) {
+      return crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(p[0]) }, key, unb64(p[1]));
+    }).then(function (pt) { return JSON.parse(new TextDecoder().decode(pt)); });
   }
 
   function frame(view, url) {
@@ -155,16 +168,14 @@
     Object.keys(views).forEach(function (k) { views[k].classList.toggle("active", k === view); });
     var links = document.querySelectorAll(".topnav a");
     links.forEach(function (a) { a.classList.toggle("current", a.dataset.view === view); });
-    if (view === "resources") frame("resources", RESOURCES_URL);
-    if (view === "todo") frame("todo", TODO_BASE + gateHash + "/index.html");
-    if (view === "reading") frame("reading", READING_BASE + gateHash + "/index.html");
+    if (view !== "home" && cfg) frame(view, cfg[view]);
     if (location.hash !== "#/" + view) history.replaceState(null, "", "#/" + view);
     window.dispatchEvent(new Event("resize"));
   }
 
-  function unlock(hash) {
-    gateHash = hash;
-    try { sessionStorage.setItem("gate", hash); } catch (e) {}
+  function unlock(raw, config) {
+    cfg = config;
+    try { sessionStorage.setItem(KEY, b64(raw)); } catch (e) {}
     gate.style.display = "none";
     main.classList.add("unlocked");
     var target = (location.hash || "").replace("#/", "");
@@ -181,12 +192,12 @@
     ev.preventDefault();
     var pw = input.value;
     if (!pw) return;
-    msg.textContent = "checking - can take up to a minute if the site is waking up";
-    sha256hex(pw).then(function (hash) {
-      return fetch(TODO_BASE + hash + "/tasks.json", { cache: "no-store", mode: "cors" }).then(function (r) {
-        if (r.ok) { msg.textContent = ""; unlock(hash); }
-        else { msg.textContent = "wrong password - try again"; input.select(); }
-      }, function () { msg.textContent = "could not reach the site - try again in a moment"; });
+    msg.textContent = "unlocking...";
+    stretch(pw).then(function (raw) {
+      return decrypt(raw, CONTENT).then(function (config) {
+        msg.textContent = "";
+        unlock(raw, config);
+      }, function () { msg.textContent = "wrong password - try again"; input.select(); });
     });
   });
 
@@ -195,8 +206,12 @@
   });
 
   var saved = null;
-  try { saved = sessionStorage.getItem("gate"); } catch (e) {}
-  if (saved) { unlock(saved); }
+  try { saved = sessionStorage.getItem(KEY); } catch (e) {}
+  if (saved) {
+    decrypt(unb64(saved), CONTENT).then(function (config) { unlock(unb64(saved), config); }, function () {
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+    });
+  }
 })();
 </script>
 </body>
