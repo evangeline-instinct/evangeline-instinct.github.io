@@ -86,7 +86,6 @@
   <nav class="topnav" id="topnav">
     <a data-view="home" class="current">Home</a>
     <a data-view="resources">Resources</a>
-    <a data-view="todo">To - Do</a>
     <a data-view="reading">Reading</a>
   </nav>
 
@@ -115,7 +114,6 @@
   </div>
 
   <div class="frame-wrap" id="view-resources"></div>
-  <div class="frame-wrap" id="view-todo"></div>
   <div class="frame-wrap" id="view-reading"></div>
 </main>
 <script src="pond.js"></script>
@@ -124,8 +122,8 @@
    (PBKDF2, 2,000,000 rounds) and the page's private config is encrypted with it (AES-GCM).
    Nothing private can be read from this file without the password; a wrong password fails
    decryption. Once unlocked, the key is kept in this tab only (sessionStorage). */
-var SALT = '9ZUEdBrs3ixk/c+WSM846w==', ITER = 2000000, KEY = 'domain.key';
-var CONTENT = 't8sTctIx4Lv/DCZT.Ik3Yi/G0VN0B2NmNH/O+c1BMYR82KaDUknw4kTsJ4oX8z1rlTaYNRuDWW0InizQ6yWh9QVWhPYNmkszs/2geJmoIrw0PiSstxe79wlQgTDxnQ7CdJYPgzAvYJw/7Ws8IxVXkZyOn55u1aeDjP/4yghBJo9PYjwdIF/X/pQRqsUsxxdegsdou48fzuKDmwa4Y7AwpOTDnu9IxKpaOM25I0jiKF1Dx2/PmDS5YIpM/yaSCRbG6DLqLa9rx8vVb6hRi2Om1bQzksDX510mifGDOw4Q4o82/dVXuVnV10TTSMTuQdTfP8ckXGXTaAAf8mM37bAXMuvjivvNJaLe2ON3EZDQNGTDJpcEyBrRsHk3Zf6ACAV5MIMdQrqvGPbl6RylGPVMptRDZ21GX7DpkLD4geW3NL5/E9CzxFVrn+J+pkXRak3yvSVdNFxwC';
+var SALT = '+vku7i5hHZR8PW/KmIVGMQ==', ITER = 2000000, KEY = 'domain.key';
+var CONTENT = 'koRdVsrXzZgQN8QK.I59P6Fn0/ncA4Wkcw0N9kMJNrGW8uhFksDw3g7N0G6UklPELXeC9tn8FFDnmvrz5iwK7R46WEzOTxi+J9xF4kUcND/drA1SsvmYK5OBvYYli5ycxsi12mZ6jrFVXom3WiKb26dQmhPpqi9FeLVBTKqmlCuAJ9enN9ZXXUjoxeNW+ZoqIMl9gvQ51uR1COaZGzErpg2Xqj60C3vFyqplZtI3rg/ninbSM0M2WpNmyRxNTZU+ihBQoRRCkojxNqLiZuE0UbBpw4AkON1JvWK5fBsvK';
 (function () {
   var main = document.getElementById("main");
   var gate = document.getElementById("gate");
@@ -164,7 +162,7 @@ var CONTENT = 't8sTctIx4Lv/DCZT.Ik3Yi/G0VN0B2NmNH/O+c1BMYR82KaDUknw4kTsJ4oX8z1rl
   }
 
   function show(view) {
-    var views = { home: home, resources: document.getElementById("view-resources"), todo: document.getElementById("view-todo"), reading: document.getElementById("view-reading") };
+    var views = { home: home, resources: document.getElementById("view-resources"), reading: document.getElementById("view-reading") };
     Object.keys(views).forEach(function (k) { views[k].classList.toggle("active", k === view); });
     var links = document.querySelectorAll(".topnav a");
     links.forEach(function (a) { a.classList.toggle("current", a.dataset.view === view); });
@@ -179,7 +177,7 @@ var CONTENT = 't8sTctIx4Lv/DCZT.Ik3Yi/G0VN0B2NmNH/O+c1BMYR82KaDUknw4kTsJ4oX8z1rl
     gate.style.display = "none";
     main.classList.add("unlocked");
     var target = (location.hash || "").replace("#/", "");
-    show(["home", "resources", "todo", "reading"].indexOf(target) >= 0 ? target : "home");
+    show(["home", "resources", "reading"].indexOf(target) >= 0 ? target : "home");
   }
 
   enterBtn.addEventListener("click", function () {
