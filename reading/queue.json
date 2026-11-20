@@ -6,10 +6,95 @@
       "url": "https://aiengineeringfromscratch.com/"
     },
     {
-      "title": "kleinberg pdf #1"
+      "title": "kleinberg pdf #1",
+      "url": ""
     },
     {
-      "title": "kleinberg pdf #2"
+      "title": "kleinberg pdf #2",
+      "url": ""
+    }
+  ],
+  "candidates": [
+    {
+      "title": "tesla review"
+    },
+    {
+      "title": "against supplements"
+    },
+    {
+      "title": "zvi's sura response"
+    },
+    {
+      "title": "furman on his first job"
+    },
+    {
+      "title": "trade and the end of antiquity"
+    },
+    {
+      "title": "nber papers on university uprising / censorship"
+    },
+    {
+      "title": "hanania / nostromo"
+    },
+    {
+      "title": "anthropic succession plan"
+    },
+    {
+      "title": "mossadegh"
+    },
+    {
+      "title": "understanding ai on sim-to-real"
+    },
+    {
+      "title": "zvi ai #193"
+    },
+    {
+      "title": "kofman wartalk"
+    },
+    {
+      "title": "gao / wolitzky"
+    },
+    {
+      "title": "anthropic vs anthropic"
+    },
+    {
+      "title": "cowen on grief"
+    },
+    {
+      "title": "nautilus books"
+    },
+    {
+      "title": "roman mars on design"
+    },
+    {
+      "title": "vivalt"
+    },
+    {
+      "title": "assorted acx pieces"
+    },
+    {
+      "title": "marginal revolution excerpt of the economist piece on ai-generated economics research vs verification of human papers",
+      "url": "https://marginalrevolution.com/marginalrevolution/2026/11/ais-vs-humans-in-economics-papers.html"
+    },
+    {
+      "title": "marginal revolution quoting the reading first working-paper abstract, phonics-based instruction in texas",
+      "url": "https://marginalrevolution.com/marginalrevolution/2026/11/phonics-based-instruction-and-student-achievement.html"
+    },
+    {
+      "title": "kempes & krakauer, \"science after super intelligence\" (nautilus)",
+      "url": "https://nautil.us/science-after-super-intelligence-1286807"
+    },
+    {
+      "title": "zvi mowshowitz on dwarkesh patel’s november 2026 podcast with paul christiano",
+      "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-november-2026"
+    },
+    {
+      "title": "economic journal paper on whether mood moves asset prices (vr-induced moods, lab market)",
+      "url": "https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/ueag143/9065335"
+    },
+    {
+      "title": "chinatalk, \"we went to austin to see robots\"",
+      "url": "https://www.chinatalk.media/p/we-went-to-austin-to-see-robots"
     }
   ],
   "delivered": [
@@ -153,65 +238,19 @@
           "url": "https://americaninequality.substack.com/p/the-people-who-feed-us-are-on-their"
         }
       ]
-    }
-  ],
-  "candidates": [
-    {
-      "title": "tesla review"
     },
     {
-      "title": "against supplements"
-    },
-    {
-      "title": "zvi's sura response"
-    },
-    {
-      "title": "furman on his first job"
-    },
-    {
-      "title": "trade and the end of antiquity"
-    },
-    {
-      "title": "nber papers on university uprising / censorship"
-    },
-    {
-      "title": "hanania / nostromo"
-    },
-    {
-      "title": "anthropic succession plan"
-    },
-    {
-      "title": "mossadegh"
-    },
-    {
-      "title": "understanding ai on sim-to-real"
-    },
-    {
-      "title": "zvi ai #193"
-    },
-    {
-      "title": "kofman wartalk"
-    },
-    {
-      "title": "gao / wolitzky"
-    },
-    {
-      "title": "anthropic vs anthropic"
-    },
-    {
-      "title": "cowen on grief"
-    },
-    {
-      "title": "nautilus books"
-    },
-    {
-      "title": "roman mars on design"
-    },
-    {
-      "title": "vivalt"
-    },
-    {
-      "title": "assorted acx pieces"
+      "date": "nov 20",
+      "items": [
+        {
+          "title": "saloni dattani, \"the trouble with serendipity\"",
+          "url": "https://www.worksinprogress.news/p/the-trouble-with-serendipity"
+        },
+        {
+          "title": "irc authors, \"the price of preparedness\"",
+          "url": "https://indevelopmentmag.substack.com/p/the-price-of-preparedness"
+        }
+      ]
     }
   ],
   "saved": []
