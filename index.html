@@ -36,6 +36,7 @@
     -webkit-font-smoothing: antialiased;
   }
   main { max-width: 560px; margin: 0 auto; padding: 14vh 20px 10vh; }
+  main.unlocked { max-width: 860px; padding-top: 6vh; }
   h1 { font-size: 18px; font-weight: 400; margin: 0; }
   .site { margin: 0 0 24px; }
   .pond-wrap { margin-bottom: 44px; }
@@ -46,25 +47,157 @@
   p { margin: 0; }
   a { color: inherit; text-decoration: underline; text-decoration-color: #ccc; text-underline-offset: 3px; text-decoration-thickness: 1px; }
   a:hover { text-decoration-color: var(--ink); }
+
+  /* enter domain gate */
+  #enter-domain { display: inline-block; margin-top: 8px; cursor: pointer; background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; text-decoration-color: #ccc; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  #enter-domain:hover { text-decoration-color: var(--ink); }
+  #gate-form { margin-top: 16px; display: none; }
+  #gate-form.open { display: block; }
+  #gate-form input {
+    font: inherit; color: inherit; background: #fff;
+    border: 1px solid #ccc; border-radius: 4px; padding: 6px 10px; width: min(260px, 70%);
+  }
+  #gate-form input:focus { outline: none; border-color: var(--ink); }
+  #gate-form button { font: inherit; background: none; border: 0; padding: 0 0 0 10px; cursor: pointer; color: inherit; text-decoration: underline; text-decoration-color: #ccc; text-underline-offset: 3px; }
+  #gate-form button:hover { text-decoration-color: var(--ink); }
+  #gate-msg { margin-top: 10px; color: var(--muted); font-size: 16px; min-height: 1.6em; }
+
+  /* top nav: akshatb.com style - one centred line, dot separators, fine rule */
+  .topnav {
+    display: none; flex-wrap: wrap; justify-content: center; align-items: baseline;
+    gap: 0.2rem 0; margin: 0 0 2.6rem; padding: 0 0 1rem;
+    border-bottom: 1px solid rgba(17,17,17,0.18);
+  }
+  main.unlocked .topnav { display: flex; }
+  .topnav a { font-size: 1rem; white-space: nowrap; color: inherit; text-decoration: none; cursor: pointer; }
+  .topnav a:hover { text-decoration: underline; text-decoration-color: rgba(17,17,17,0.45); text-decoration-thickness: 1px; text-underline-offset: .15em; }
+  .topnav a:not(:last-child)::after { content: "\00b7"; display: inline-block; margin: 0 0.7rem; opacity: 0.55; }
+  .topnav a.current { text-decoration: underline; text-decoration-color: var(--ink); text-underline-offset: .15em; }
+
+  .frame-wrap { display: none; }
+  .frame-wrap.active { display: block; }
+  .frame-wrap iframe { display: block; width: 100%; height: 72vh; border: 0; background: #fff; }
+  #view-home { display: none; }
+  #view-home.active { display: block; }
 </style>
 </head>
 <body>
-<main>
-  <h1>Akshat's Instinct</h1>
-  <p class="site">akshatb [at] mail.instinct [dot] com</p>
+<main id="main">
+  <nav class="topnav" id="topnav">
+    <a data-view="home" class="current">Home</a>
+    <a data-view="resources">Resources</a>
+    <a data-view="todo">To - Do</a>
+    <a data-view="reading">Reading</a>
+  </nav>
 
-  <section class="pond-wrap">
-    <canvas id="pond" role="img" aria-label="An ASCII koi pond. Tap to feed the koi."></canvas>
-  </section>
+  <div id="gate">
+    <h1>Akshat's Instinct</h1>
+    <p class="site"><a href="mailto:akshatb@mail.instinct.com">akshatb@mail.instinct.com</a></p>
+    <button id="enter-domain" type="button">Enter Domain</button>
+    <form id="gate-form" autocomplete="off">
+      <input id="gate-input" type="password" placeholder="password" aria-label="password">
+      <button type="submit">enter</button>
+      <p id="gate-msg"></p>
+    </form>
+  </div>
 
-  <section>
-    <h2>Find me</h2>
-    <p>
-      <a href="mailto:akshatb@mail.instinct.com">Email</a>,
-      <a href="https://github.com/evangeline-instinct">GitHub</a>
-    </p>
-  </section>
+  <div id="view-home">
+    <section class="pond-wrap">
+      <canvas id="pond" role="img" aria-label="An ASCII koi pond. Tap to feed the koi."></canvas>
+    </section>
+    <section>
+      <h2>Find me</h2>
+      <p>
+        <a href="mailto:akshatb@mail.instinct.com">Email</a>,
+        <a href="https://github.com/evangeline-instinct">GitHub</a>
+      </p>
+    </section>
+  </div>
+
+  <div class="frame-wrap" id="view-resources"></div>
+  <div class="frame-wrap" id="view-todo"></div>
+  <div class="frame-wrap" id="view-reading"></div>
 </main>
 <script src="pond.js"></script>
+<script>
+(function () {
+  var TODO_BASE = "https://akshatb-to-do.onrender.com/";
+  var READING_BASE = "https://reading-queue.onrender.com/";
+  var RESOURCES_URL = "https://evangeline-instinct.github.io/akshat-resources/";
+  var main = document.getElementById("main");
+  var gate = document.getElementById("gate");
+  var home = document.getElementById("view-home");
+  var enterBtn = document.getElementById("enter-domain");
+  var form = document.getElementById("gate-form");
+  var input = document.getElementById("gate-input");
+  var msg = document.getElementById("gate-msg");
+  var gateHash = null;
+
+  function sha256hex(text) {
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)).then(function (buf) {
+      return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+    });
+  }
+
+  function frame(view, url) {
+    var wrap = document.getElementById("view-" + view);
+    if (!wrap.dataset.loaded) {
+      var f = document.createElement("iframe");
+      f.src = url;
+      f.setAttribute("title", view);
+      wrap.appendChild(f);
+      wrap.dataset.loaded = "1";
+    }
+  }
+
+  function show(view) {
+    var views = { home: home, resources: document.getElementById("view-resources"), todo: document.getElementById("view-todo"), reading: document.getElementById("view-reading") };
+    Object.keys(views).forEach(function (k) { views[k].classList.toggle("active", k === view); });
+    var links = document.querySelectorAll(".topnav a");
+    links.forEach(function (a) { a.classList.toggle("current", a.dataset.view === view); });
+    if (view === "resources") frame("resources", RESOURCES_URL);
+    if (view === "todo") frame("todo", TODO_BASE + gateHash + "/index.html");
+    if (view === "reading") frame("reading", READING_BASE + gateHash + "/index.html");
+    if (location.hash !== "#/" + view) history.replaceState(null, "", "#/" + view);
+    window.dispatchEvent(new Event("resize"));
+  }
+
+  function unlock(hash) {
+    gateHash = hash;
+    try { sessionStorage.setItem("gate", hash); } catch (e) {}
+    gate.style.display = "none";
+    main.classList.add("unlocked");
+    var target = (location.hash || "").replace("#/", "");
+    show(["home", "resources", "todo", "reading"].indexOf(target) >= 0 ? target : "home");
+  }
+
+  enterBtn.addEventListener("click", function () {
+    enterBtn.style.display = "none";
+    form.classList.add("open");
+    input.focus();
+  });
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var pw = input.value;
+    if (!pw) return;
+    msg.textContent = "checking - can take up to a minute if the site is waking up";
+    sha256hex(pw).then(function (hash) {
+      return fetch(TODO_BASE + hash + "/tasks.json", { cache: "no-store", mode: "cors" }).then(function (r) {
+        if (r.ok) { msg.textContent = ""; unlock(hash); }
+        else { msg.textContent = "wrong password - try again"; input.select(); }
+      }, function () { msg.textContent = "could not reach the site - try again in a moment"; });
+    });
+  });
+
+  document.querySelectorAll(".topnav a").forEach(function (a) {
+    a.addEventListener("click", function () { show(a.dataset.view); });
+  });
+
+  var saved = null;
+  try { saved = sessionStorage.getItem("gate"); } catch (e) {}
+  if (saved) { unlock(saved); }
+})();
+</script>
 </body>
 </html>
