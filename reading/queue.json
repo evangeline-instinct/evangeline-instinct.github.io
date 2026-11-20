@@ -1,0 +1,218 @@
+{
+  "updated": "nov 20, 2026",
+  "queue": [
+    {
+      "title": "ai engineering from scratch",
+      "url": "https://aiengineeringfromscratch.com/"
+    },
+    {
+      "title": "kleinberg pdf #1"
+    },
+    {
+      "title": "kleinberg pdf #2"
+    }
+  ],
+  "delivered": [
+    {
+      "date": "nov 6",
+      "items": [
+        {
+          "title": "claude constitution"
+        },
+        {
+          "title": "a world of pain"
+        }
+      ]
+    },
+    {
+      "date": "nov 7",
+      "items": [
+        {
+          "title": "zvi mowshowitz on astra"
+        },
+        {
+          "title": "acx on orality"
+        }
+      ]
+    },
+    {
+      "date": "nov 8",
+      "items": [
+        {
+          "title": "chinatalk cyberpocalypse"
+        },
+        {
+          "title": "marginal revolution, \"the economics of tips\""
+        }
+      ]
+    },
+    {
+      "date": "nov 9",
+      "items": [
+        {
+          "title": "alex tabarrok, \"end the state veto on power lines\"",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/end-the-state-veto-on-power-lines.html"
+        },
+        {
+          "title": "stephen kotkin, \"china will not reform\"",
+          "url": "https://www.worksinprogress.news/p/moscow-rules"
+        }
+      ]
+    },
+    {
+      "date": "nov 10",
+      "items": [
+        {
+          "title": "toby shorin, \"what bay area culture owes the german romantics\"",
+          "url": "https://asteriskmag.substack.com/p/what-bay-area-culture-owes-the-german"
+        },
+        {
+          "title": "eli lifland, \"verified compute allocation disclosures as a foundational governance tool\"",
+          "url": "https://blog.aifutures.org/p/verified-compute-allocation-disclosures"
+        }
+      ]
+    },
+    {
+      "date": "nov 13",
+      "items": [
+        {
+          "title": "hannah kim, \"we are all playable characters\"",
+          "url": "https://asteriskmag.substack.com/p/we-are-all-playable-characters"
+        },
+        {
+          "title": "tyler cowen's conversation with terence tao",
+          "url": "https://conversationswithtyler.com/episodes/terence-tao/"
+        }
+      ]
+    },
+    {
+      "date": "nov 14",
+      "items": [
+        {
+          "title": "scott alexander, \"escaping the 'outside criticism' trap\"",
+          "url": "https://www.astralcodexten.com/p/escaping-the-outside-criticism-trap"
+        },
+        {
+          "title": "chinatalk, \"the us is selling rl environments to china\"",
+          "url": "https://www.chinatalk.media/p/the-us-is-selling-rl-environments"
+        }
+      ]
+    },
+    {
+      "date": "nov 15",
+      "items": [
+        {
+          "title": "charles jones & christopher tonetti, \"the weak-link asymmetry: ai's peril and promise\"",
+          "url": "https://christophertonetti.com/files/papers/JonesTonetti_WeakLinksRisk.pdf"
+        },
+        {
+          "title": "nautilus interview with stacy kim, \"when envy is a virtue\"",
+          "url": "https://nautil.us/when-envy-is-a-virtue-1286615"
+        }
+      ]
+    },
+    {
+      "date": "nov 16",
+      "items": [
+        {
+          "title": "dan wang, \"don't put all your eggs in one city\"",
+          "url": "https://www.worksinprogress.news/p/sichuan-and-the-sun-belt"
+        },
+        {
+          "title": "bounadi & oehlen, \"coffeehouses and the scientific revolution\"",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/coffeehouses-and-the-scientific-revolution.html"
+        }
+      ]
+    },
+    {
+      "date": "nov 17",
+      "items": [
+        {
+          "title": "pieter garicano, \"how should armies fight?\"",
+          "url": "https://www.worksinprogress.news/p/how-should-armies-fight"
+        },
+        {
+          "title": "timothy lee, \"i spoke to seven physics experts grappling with the ai revolution\"",
+          "url": "https://www.understandingai.org/p/i-spoke-to-seven-physics-experts"
+        }
+      ]
+    },
+    {
+      "date": "nov 18",
+      "items": [
+        {
+          "title": "thomas kirk, \"how wheat came to feed the world\"",
+          "url": "https://asteriskmag.substack.com/p/how-wheat-came-to-feed-the-world"
+        },
+        {
+          "title": "alex tabarrok, \"was achilles conscious?\"",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/was-achilles-conscious.html"
+        },
+        {
+          "title": "zoe siegel & michael tiede, \"the people who feed us are on their own\"",
+          "url": "https://americaninequality.substack.com/p/the-people-who-feed-us-are-on-their"
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "title": "tesla review"
+    },
+    {
+      "title": "against supplements"
+    },
+    {
+      "title": "zvi's sura response"
+    },
+    {
+      "title": "furman on his first job"
+    },
+    {
+      "title": "trade and the end of antiquity"
+    },
+    {
+      "title": "nber papers on university uprising / censorship"
+    },
+    {
+      "title": "hanania / nostromo"
+    },
+    {
+      "title": "anthropic succession plan"
+    },
+    {
+      "title": "mossadegh"
+    },
+    {
+      "title": "understanding ai on sim-to-real"
+    },
+    {
+      "title": "zvi ai #193"
+    },
+    {
+      "title": "kofman wartalk"
+    },
+    {
+      "title": "gao / wolitzky"
+    },
+    {
+      "title": "anthropic vs anthropic"
+    },
+    {
+      "title": "cowen on grief"
+    },
+    {
+      "title": "nautilus books"
+    },
+    {
+      "title": "roman mars on design"
+    },
+    {
+      "title": "vivalt"
+    },
+    {
+      "title": "assorted acx pieces"
+    }
+  ],
+  "saved": []
+}
