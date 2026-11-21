@@ -1,15 +1,17 @@
 {
-  "updated": "nov 20, 2026",
+  "updated": "nov 21, 2026",
   "queue": [
     {
       "title": "ai engineering from scratch",
       "url": "https://aiengineeringfromscratch.com/"
     },
     {
-      "title": "kleinberg pdf #1"
+      "title": "kleinberg pdf #1",
+      "url": ""
     },
     {
-      "title": "kleinberg pdf #2"
+      "title": "kleinberg pdf #2",
+      "url": ""
     }
   ],
   "candidates": [
@@ -100,10 +102,12 @@
       "date": "nov 6",
       "items": [
         {
-          "title": "claude constitution"
+          "title": "claude constitution",
+          "url": null
         },
         {
-          "title": "a world of pain"
+          "title": "a world of pain",
+          "url": null
         }
       ]
     },
@@ -111,10 +115,12 @@
       "date": "nov 7",
       "items": [
         {
-          "title": "zvi mowshowitz on astra"
+          "title": "zvi mowshowitz on astra",
+          "url": null
         },
         {
-          "title": "acx on orality"
+          "title": "acx on orality",
+          "url": null
         }
       ]
     },
@@ -122,10 +128,12 @@
       "date": "nov 8",
       "items": [
         {
-          "title": "chinatalk cyberpocalypse"
+          "title": "chinatalk cyberpocalypse",
+          "url": null
         },
         {
-          "title": "marginal revolution, \"the economics of tips\""
+          "title": "marginal revolution, \"the economics of tips\"",
+          "url": null
         }
       ]
     },
@@ -247,6 +255,19 @@
         {
           "title": "irc authors, \"the price of preparedness\"",
           "url": "https://indevelopmentmag.substack.com/p/the-price-of-preparedness"
+        }
+      ]
+    },
+    {
+      "date": "nov 21",
+      "items": [
+        {
+          "title": "tyler cowen, \"emergent ventures, 60th cohort\"",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/emergent-ventures-60th-cohort.html"
+        },
+        {
+          "title": "vincent geloso, \"the great enrichment\" (excerpt via marginal revolution)",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/the-great-enrichment.html"
         }
       ]
     }
