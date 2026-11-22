@@ -1,5 +1,5 @@
 {
-  "updated": "nov 21, 2026",
+  "updated": "nov 22, 2026",
   "queue": [
     {
       "title": "ai engineering from scratch",
@@ -268,6 +268,19 @@
         {
           "title": "vincent geloso, \"the great enrichment\" (excerpt via marginal revolution)",
           "url": "https://marginalrevolution.com/marginalrevolution/2026/11/the-great-enrichment.html"
+        }
+      ]
+    },
+    {
+      "date": "nov 22",
+      "items": [
+        {
+          "title": "colmsjo, ruggieri & saccarola, \"danish daughters\" (via marginal revolution)",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/danish-daughters.html"
+        },
+        {
+          "title": "cowen on bjorkegren, lagakos & vanvuren, \"will ai growth reach the developing world?\"",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/will-ai-growth-reach-the-developing-world.html"
         }
       ]
     }
