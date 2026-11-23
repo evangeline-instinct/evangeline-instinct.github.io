@@ -1,5 +1,5 @@
 {
-  "updated": "nov 22, 2026",
+  "updated": "nov 23, 2026",
   "queue": [
     {
       "title": "ai engineering from scratch",
@@ -14,100 +14,123 @@
       "url": ""
     }
   ],
-  "candidates": [
-    {
-      "title": "tesla review"
-    },
-    {
-      "title": "against supplements"
-    },
-    {
-      "title": "zvi's sura response"
-    },
-    {
-      "title": "furman on his first job"
-    },
-    {
-      "title": "trade and the end of antiquity"
-    },
-    {
-      "title": "nber papers on university uprising / censorship"
-    },
-    {
-      "title": "hanania / nostromo"
-    },
-    {
-      "title": "anthropic succession plan"
-    },
-    {
-      "title": "mossadegh"
-    },
-    {
-      "title": "understanding ai on sim-to-real"
-    },
-    {
-      "title": "zvi ai #193"
-    },
-    {
-      "title": "kofman wartalk"
-    },
-    {
-      "title": "gao / wolitzky"
-    },
-    {
-      "title": "anthropic vs anthropic"
-    },
-    {
-      "title": "cowen on grief"
-    },
-    {
-      "title": "nautilus books"
-    },
-    {
-      "title": "roman mars on design"
-    },
-    {
-      "title": "vivalt"
-    },
-    {
-      "title": "assorted acx pieces"
-    },
-    {
-      "title": "marginal revolution excerpt of the economist piece on ai-generated economics research vs verification of human papers",
-      "url": "https://marginalrevolution.com/marginalrevolution/2026/11/ais-vs-humans-in-economics-papers.html"
-    },
-    {
-      "title": "marginal revolution quoting the reading first working-paper abstract, phonics-based instruction in texas",
-      "url": "https://marginalrevolution.com/marginalrevolution/2026/11/phonics-based-instruction-and-student-achievement.html"
-    },
-    {
-      "title": "kempes & krakauer, \"science after super intelligence\" (nautilus)",
-      "url": "https://nautil.us/science-after-super-intelligence-1286807"
-    },
-    {
-      "title": "zvi mowshowitz on dwarkesh patel’s november 2026 podcast with paul christiano",
-      "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-november-2026"
-    },
-    {
-      "title": "economic journal paper on whether mood moves asset prices (vr-induced moods, lab market)",
-      "url": "https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/ueag143/9065335"
-    },
-    {
-      "title": "chinatalk, \"we went to austin to see robots\"",
-      "url": "https://www.chinatalk.media/p/we-went-to-austin-to-see-robots"
+  "candidates": {
+    "items": [
+      {
+        "title": "tesla review",
+        "url": null
+      },
+      {
+        "title": "against supplements",
+        "url": null
+      },
+      {
+        "title": "zvi's sura response",
+        "url": null
+      },
+      {
+        "title": "furman on his first job",
+        "url": null
+      },
+      {
+        "title": "trade and the end of antiquity",
+        "url": null
+      },
+      {
+        "title": "nber papers on university uprising / censorship",
+        "url": null
+      },
+      {
+        "title": "hanania / nostromo",
+        "url": null
+      },
+      {
+        "title": "anthropic succession plan",
+        "url": null
+      },
+      {
+        "title": "mossadegh",
+        "url": null
+      },
+      {
+        "title": "understanding ai on sim-to-real",
+        "url": null
+      },
+      {
+        "title": "zvi ai #193",
+        "url": null
+      },
+      {
+        "title": "kofman wartalk",
+        "url": null
+      },
+      {
+        "title": "gao / wolitzky",
+        "url": null
+      },
+      {
+        "title": "anthropic vs anthropic",
+        "url": null
+      },
+      {
+        "title": "cowen on grief",
+        "url": null
+      },
+      {
+        "title": "nautilus books",
+        "url": null
+      },
+      {
+        "title": "roman mars on design",
+        "url": null
+      },
+      {
+        "title": "vivalt",
+        "url": null
+      },
+      {
+        "title": "assorted acx pieces",
+        "url": null
+      }
+    ],
+    "fresh_leads": {
+      "items": [
+        {
+          "title": "marginal revolution excerpt of the economist piece on ai-generated economics research vs verification of human papers",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/ais-vs-humans-in-economics-papers.html"
+        },
+        {
+          "title": "marginal revolution quoting the reading first working-paper abstract, phonics-based instruction in texas",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/phonics-based-instruction-and-student-achievement.html"
+        },
+        {
+          "title": "kempes & krakauer, \"science after super intelligence\" (nautilus)",
+          "url": "https://nautil.us/science-after-super-intelligence-1286807"
+        },
+        {
+          "title": "zvi mowshowitz on dwarkesh patel’s november 2026 podcast with paul christiano",
+          "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-november-2026"
+        },
+        {
+          "title": "economic journal paper on whether mood moves asset prices (vr-induced moods, lab market)",
+          "url": "https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/ueag143/9065335"
+        },
+        {
+          "title": "chinatalk, \"we went to austin to see robots\"",
+          "url": "https://www.chinatalk.media/p/we-went-to-austin-to-see-robots"
+        }
+      ]
     }
-  ],
+  },
   "delivered": [
     {
       "date": "nov 6",
       "items": [
         {
-          "title": "claude constitution",
-          "url": null
+          "title": "claude constitution"
         },
         {
-          "title": "a world of pain",
-          "url": null
+          "title": "a world of pain"
         }
       ]
     },
@@ -115,12 +138,10 @@
       "date": "nov 7",
       "items": [
         {
-          "title": "zvi mowshowitz on astra",
-          "url": null
+          "title": "zvi mowshowitz on astra"
         },
         {
-          "title": "acx on orality",
-          "url": null
+          "title": "acx on orality"
         }
       ]
     },
@@ -128,12 +149,10 @@
       "date": "nov 8",
       "items": [
         {
-          "title": "chinatalk cyberpocalypse",
-          "url": null
+          "title": "chinatalk cyberpocalypse"
         },
         {
-          "title": "marginal revolution, \"the economics of tips\"",
-          "url": null
+          "title": "marginal revolution, \"the economics of tips\""
         }
       ]
     },
@@ -281,6 +300,19 @@
         {
           "title": "cowen on bjorkegren, lagakos & vanvuren, \"will ai growth reach the developing world?\"",
           "url": "https://marginalrevolution.com/marginalrevolution/2026/11/will-ai-growth-reach-the-developing-world.html"
+        }
+      ]
+    },
+    {
+      "date": "nov 23",
+      "items": [
+        {
+          "title": "aeppli, roh & wilmers, \"increasing pay for lower wage workers\" (via marginal revolution)",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/increasing-pay-for-lower-wage-workers.html"
+        },
+        {
+          "title": "tabarrok, \"still unproven: can britain build a tunnel?\" (marginal revolution)",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/still-unproven-can-britain-build-a-tunnel.html"
         }
       ]
     }
