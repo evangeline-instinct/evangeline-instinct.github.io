@@ -1,5 +1,5 @@
 {
-  "updated": "nov 23, 2026",
+  "updated": "nov 24, 2026",
   "queue": [
     {
       "title": "ai engineering from scratch",
@@ -313,6 +313,19 @@
         {
           "title": "tabarrok, \"still unproven: can britain build a tunnel?\" (marginal revolution)",
           "url": "https://marginalrevolution.com/marginalrevolution/2026/11/still-unproven-can-britain-build-a-tunnel.html"
+        }
+      ]
+    },
+    {
+      "date": "nov 24",
+      "items": [
+        {
+          "title": "patel, worsham, liu-hass & jena, \"the health effects of eating red meat\" (nber w36025, via marginal revolution)",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/the-health-effects-of-eating-red-meat.html"
+        },
+        {
+          "title": "works in progress, \"the unfair edge of biotech hedge funds\"",
+          "url": "https://www.worksinprogress.news/p/the-unfair-edge-of-biotech-hedge"
         }
       ]
     }
