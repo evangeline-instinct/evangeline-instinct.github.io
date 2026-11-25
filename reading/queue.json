@@ -1,5 +1,5 @@
 {
-  "updated": "nov 24, 2026",
+  "updated": "nov 25, 2026",
   "queue": [
     {
       "title": "ai engineering from scratch",
@@ -326,6 +326,19 @@
         {
           "title": "works in progress, \"the unfair edge of biotech hedge funds\"",
           "url": "https://www.worksinprogress.news/p/the-unfair-edge-of-biotech-hedge"
+        }
+      ]
+    },
+    {
+      "date": "nov 25",
+      "items": [
+        {
+          "title": "in development, \"made for scale\" (welcome to the $100 billion club)",
+          "url": "https://indevelopmentmag.substack.com/p/welcome-to-the-100-billion-club"
+        },
+        {
+          "title": "reshef & slattery, \"how did the united states become a lawyerly society?\" (via marginal revolution)",
+          "url": "https://marginalrevolution.com/marginalrevolution/2026/11/how-did-the-united-states-become-a-lawyerly-society.html"
         }
       ]
     }
